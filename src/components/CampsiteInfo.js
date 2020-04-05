@@ -58,15 +58,15 @@ class CommentForm extends Component {
 
     }
 
+    handleSubmit(values) {
+        console.log("Current state is: " + JSON.stringify(values, null, 4));
+        alert("Current state is: " + JSON.stringify(values, null, 4));
+    }
+
     toggleModal() {
         this.setState({
             isModalOpen: !this.state.isModalOpen
         });
-    }
-
-    handleSubmit(values) {
-        console.log("Current state is: " + JSON.stringify(values));
-        alert("Current state is: " + JSON.stringify(values));
     }
 
     render() {
@@ -78,7 +78,7 @@ class CommentForm extends Component {
                         <ModalHeader toggle={this.toggleModal}>Submit Comment</ModalHeader>
                         <ModalBody>
                             <div className="form-group">
-                                <Label htmlFor="Rating">Rating</Label>
+                                <Label htmlFor="rating">Rating</Label>
                                 <Control.select model=".rating" id="rating" name="rating" 
                                 className="form-control" >
                                     <option>1</option>
@@ -89,7 +89,7 @@ class CommentForm extends Component {
                                 </Control.select>
                             </div>
                             <div className="form-group">
-                                <Label htmlFor="Author">Your Name</Label>
+                                <Label htmlFor="author">Your Name</Label>
                                 <Control.text model=".author" id="author" name="author" 
                                     placeholder="Your Name"
                                     className="form-control"
@@ -110,7 +110,7 @@ class CommentForm extends Component {
                                     }} />
                             </div>
                             <div className="form-group">
-                                <Label htmlFor="Text">Comment</Label>
+                                <Label htmlFor="text">Comment</Label>
                                 <Control.textarea model=".text" id="text" name="text" 
                                 rows="6"
                                 className="form-control" />
