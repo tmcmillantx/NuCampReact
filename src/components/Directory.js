@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardImg, CardImgOverlay, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { Loading } from './LoadingComponent';
+import { Loading } from './Loading';
 
 function RenderDirectoryItem({campsite}) {
     return (
@@ -25,7 +25,7 @@ function Directory(props) {
             </div>
         );
     });
-    
+
     if (props.campsites.isLoading) {
         return (
             <div className="container">

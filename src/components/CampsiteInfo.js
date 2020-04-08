@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button, Card, CardImg, CardText, CardBody, Breadcrumb, BreadcrumbItem, Modal, ModalHeader, ModalBody, Label } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
-import { Loading } from './LoadingComponent';
+import { Loading } from './Loading';
 
 
 const required = val => val && val.length;
@@ -62,8 +62,6 @@ class CommentForm extends Component {
     handleSubmit(values) {
         this.toggleModal();
         this.props.addComment(this.props.campsiteId, values.rating, values.author, values.text);
-        console.log("Current state is: " + JSON.stringify(values, null, 4));
-        alert("Current state is: " + JSON.stringify(values, null, 4));
     }
 
     toggleModal() {
